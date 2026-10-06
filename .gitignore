@@ -1,0 +1,7 @@
+.env
+.env.local
+_shared/client.json
+*/output/*
+!*/output/.gitkeep
+__pycache__/
+CLAUDE.local.md

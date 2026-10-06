@@ -1,0 +1,17 @@
+{
+  "business_name": "Your Business Name",
+  "site_url": "https://www.example.com",
+  "nap": {
+    "name": "Your Business Name",
+    "address": "123 Main St, City, ST 00000",
+    "phone": "(000) 000-0000"
+  },
+  "services": ["Service one", "Service two"],
+  "lanes": ["topic lane one", "topic lane two"],
+  "seed_keywords": ["keyword one", "keyword two"],
+  "author": { "name": "Owner Name", "role": "Founder", "url": "https://www.example.com/about" },
+  "reviewer": { "name": "Expert Name", "credentials": "License or credential", "url": "" },
+  "publisher": { "name": "Your Business Name", "logo": "https://www.example.com/logo.png" },
+  "site_repo": "C:/path/to/your/website/repo",
+  "blog_dir": "content/blog"
+}
