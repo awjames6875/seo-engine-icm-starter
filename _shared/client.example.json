@@ -9,9 +9,18 @@
   "services": ["Service one", "Service two"],
   "lanes": ["topic lane one", "topic lane two"],
   "seed_keywords": ["keyword one", "keyword two"],
+  "ages_served": "who you serve",
+  "insurance_live": ["Payer one", "Payer two"],
   "author": { "name": "Owner Name", "role": "Founder", "url": "https://www.example.com/about" },
   "reviewer": { "name": "Expert Name", "credentials": "License or credential", "url": "" },
   "publisher": { "name": "Your Business Name", "logo": "https://www.example.com/logo.png" },
   "site_repo": "C:/path/to/your/website/repo",
-  "blog_dir": "content/blog"
+  "blog_dir": "content/blog",
+  "address_match": { "street": "123\\s+Main\\s+St", "suite": "(Suite|Ste\\.?|#)\\s*100" },
+  "brand_misspellings": ["YourBusiness"],
+  "phone_allowlist": ["(000) 000-0001"],
+  "banned_text": [
+    ["guaranteed results", "outcome claim the business cannot prove"],
+    ["your-google-verification", "template placeholder left live"]
+  ]
 }

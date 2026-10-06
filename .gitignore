@@ -5,3 +5,6 @@ _shared/client.json
 !*/output/.gitkeep
 __pycache__/
 CLAUDE.local.md
+tasks/
+*/CLAUDE.md
+*/*/CLAUDE.md
