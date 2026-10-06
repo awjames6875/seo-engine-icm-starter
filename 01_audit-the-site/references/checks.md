@@ -33,5 +33,5 @@ Page speed and LCP, JavaScript-rendered content, keyword rankings, backlinks, AI
 Search Console and open-seo data merge in later, only after the owner says yes to the cost.
 
 ## Score
-Each finding adds points: critical 10, high 5, medium 2, low 1. `plan.md` sorts checks by total points,
+`plan.md` sorts checks by severity (critical, high, medium, low), then by how many pages each one hits,
 so the biggest problem is first.

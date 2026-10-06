@@ -15,7 +15,6 @@ from urllib.parse import urlparse
 
 ROOM = Path(__file__).resolve().parent.parent
 SHARED = ROOM.parent / "_shared"
-POINTS = {"critical": 10, "high": 5, "medium": 2, "low": 1}
 SEVERITY_ORDER = ["critical", "high", "medium", "low"]
 AI_BOTS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot",
            "PerplexityBot", "Google-Extended", "Googlebot", "Bingbot", "Applebot"]
@@ -307,7 +306,8 @@ def loadFixText():
 def writePlan(folder, findings, pageCount, base):
     fixes = loadFixText()
     ranked = sorted(groupFindings(findings).items(),
-                    key=lambda pair: -sum(POINTS[item["severity"]] for item in pair[1]))
+                    key=lambda pair: (SEVERITY_ORDER.index(pair[1][0]["severity"]),
+                                      -len({item["url"] for item in pair[1]})))
     lines = [f"# Plan: {base}", f"{pageCount} pages checked. Biggest problem first. Read this, then say yes or no.", ""]
     for number, (checkId, items) in enumerate(ranked, 1):
         problem, fix = fixes.get(checkId, ("", ""))
