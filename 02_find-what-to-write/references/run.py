@@ -44,8 +44,11 @@ def fetchJson(url, body=None, auth=None):
         headers["Authorization"] = "Basic " + base64.b64encode(auth.encode()).decode()
     data = json.dumps(body).encode() if body is not None else None
     request = urllib.request.Request(url, data=data, headers=headers)
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return json.loads(response.read().decode("utf-8", errors="replace"))
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return json.loads(response.read().decode("utf-8", errors="replace"))
+    except urllib.error.HTTPError as error:
+        return json.loads(error.read().decode("utf-8", errors="replace"))
 
 
 def words(text):
@@ -79,9 +82,9 @@ def collectTopics(seeds):
 
 
 def checkTasks(response):
-    for task in response.get("tasks", []):
-        if task.get("status_code") != 20000:
-            sys.exit(f"DataForSEO error {task.get('status_code')}: {task.get('status_message')}")
+    for item in [response] + (response.get("tasks") or []):
+        if item.get("status_code") != 20000:
+            sys.exit(f"DataForSEO error {item.get('status_code')}: {item.get('status_message')}")
 
 
 def fetchVolumes(keywords, location, auth):
