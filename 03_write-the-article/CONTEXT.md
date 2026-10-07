@@ -1,6 +1,6 @@
 # CONTEXT.md — 03 Write the Article
 
-Last updated: 2026-10-06
+Last updated: 2026-10-07
 
 ## Stage Contract
 1. **Inputs:** `02_find-what-to-write/output/<slug>/brief.md`, `02_find-what-to-write/output/<slug>/owner-facts.md`,
@@ -9,7 +9,8 @@ Last updated: 2026-10-06
    questions in the template's order, then runs the truth-rules checklist on every line.
 3. **Outputs:** `output/<slug>/draft.md` (frontmatter: title, metaTitle, metaDescription, excerpt,
    category, tags; then the body; then a `## FAQ` section of question/answer pairs) and
-   `output/<slug>/questions-for-owner.md` (every fact that was missing).
+   `output/<slug>/questions-for-owner.md` (missing facts, public facts for the reviewer to verify,
+  brief questions skipped and why).
 4. **Human check:** The owner reads `draft.md`. Yes = `review.md` says `reviewed`. Then room 04.
 
 ## L3 / L4 folders

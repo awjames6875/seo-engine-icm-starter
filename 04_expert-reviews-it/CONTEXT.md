@@ -1,13 +1,16 @@
 # CONTEXT.md — 04 Expert Reviews It
 
-Last updated: 2026-10-06
+Last updated: 2026-10-07
 
 ## Stage Contract
 1. **Inputs:** `03_write-the-article/output/<slug>/draft.md`, `_shared/truth-rules.md`,
    `_shared/client.json` (reviewer name), `references/claim-patterns.txt`.
-2. **Process:** `references/run.py` flags every line that matches a risky claim (in health: clinical, medication, diagnosis),
-   statistic or outcome pattern, plus banned phrases, and builds a review sheet. The expert reviewer reads
-   the sheet and the draft and marks each flag OK or a fix.
+2. **Process:** `py 04_expert-reviews-it/references/run.py <slug>` refuses unless room 03's `review.md` says
+   `reviewed`. It flags every line that matches a risky claim (in health: clinical, medication, diagnosis),
+   statistic or outcome pattern, plus `banned_text`, brand misspellings and any phone that is not `nap.phone`,
+   and builds a review sheet. The expert reviewer reads the sheet and the draft and marks each flag
+   `- [x] OK` or writes the corrected line (or `delete`) after `Fix:`. Then `run.py <slug> --apply` writes
+   `approved.md`; it refuses if a flag is undecided or the draft changed since the sheet was made.
 3. **Outputs:** `output/<slug>/review-sheet.md` (each flagged line, why, OK/fix box),
    `output/<slug>/approved.md` (the draft with the expert reviewer's fixes applied).
 4. **Human check:** the expert reviewer signs off. `review.md` says `reviewed`, `reviewer:` the expert reviewer. Then room 05.
