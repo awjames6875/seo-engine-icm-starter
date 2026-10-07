@@ -1,6 +1,7 @@
 {
   "business_name": "Your Business Name",
   "site_url": "https://www.example.com",
+  "location_name": "City,State,United States",
   "nap": {
     "name": "Your Business Name",
     "address": "123 Main St, City, ST 00000",
