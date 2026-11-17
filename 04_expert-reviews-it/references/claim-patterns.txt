@@ -1,0 +1,12 @@
+# One check per line: reason | regex (case-insensitive). The expert reviewer judges every flag.
+# client.json banned_text, brand misspellings and stray phone numbers are checked by run.py too.
+diagnosis | \bdiagnos\w*
+medication | \b(medications?|medicines?|prescri\w*|doses?|dosage|antidepressants?|ssris?|stimulants?)\b
+outcome or promise | \b(cures?|cured|heals?|healed|recover(ed)? from|guarantee\w*|proven|will (help|stop|end|feel|fix))\b
+statistic | \d+(\.\d+)?\s?%|\bpercent\b|\b\d+ (out of|in) \d+\b
+volume claim | \b\d[\d,]*\+?\s+(families|clients|people|kids|children|patients|years)\b
+evidence claim | \b(studies|study|research|evidence[- ]based|clinically|scientifically)\b
+superlative | \b(best|leading|#1|number one|top[- ]rated)\b
+safety wording | \b(suicid\w*|self[- ]harm|crisis|overdose)\b
+coverage claim | \b(covers?|covered|coverage|free|no cost|copays?|eligib\w*)\b
+advice | \byou (should|need to|must)\b
