@@ -42,7 +42,8 @@ Run conventions, stable vs. per-run material, and review status: `CONTEXT.md`.
 4. **60-30-10:** a room tagged 60% or 30% runs a script, never the model.
 5. **Nothing moves on until that room's `review.md` says `reviewed`.**
 6. **Never call a paid API without asking, every time** (open-seo, DataForSEO).
-7. **Nothing publishes itself.** Room 06 only ever pushes a branch. The owner merges.
+7. **Nothing publishes itself.** Room 06 only ever pushes a branch. The owner merges, or says
+   "publish" for that slug and Claude merges via the `publish-approved-article` skill.
 8. Truth rules in `_shared/truth-rules.md` outrank everything, including SEO.
 9. When a run goes wrong, fix the reference file that allowed it, not the artifact.
 
@@ -51,4 +52,4 @@ Run conventions, stable vs. per-run material, and review status: `CONTEXT.md`.
 - The room list lives in this file only. Never repeat it in `CONTEXT.md`.
 - Python runs as `py` on Windows (`python3` on Mac/Linux).
 
-Last updated: 2026-10-06
+Last updated: 2026-11-14

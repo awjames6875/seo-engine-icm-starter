@@ -1,13 +1,14 @@
 # CONTEXT.md — 06 Publish to the Blog
 
-Last updated: 2026-10-06
+Last updated: 2026-11-12
 
 ## Stage Contract
 1. **Inputs:** `05_add-search-markup/output/<slug>/<slug>.md`, `05_add-search-markup/output/<slug>/llms-line.txt`,
    `_shared/client.json` (`site_repo` path, `blog_dir`), `references/publish.md`.
-2. **Process:** `references/run.py` makes a branch `blog/<slug>` in the site repo, copies the post
-   into the blog folder, adds the llms.txt line, runs the site build, commits and pushes the branch.
-   Your host (Vercel, Netlify…) builds a preview.
+2. **Process:** `py 06_publish-to-the-blog/references/run.py <slug>` refuses unless room 04 is `reviewed` and room 05
+   made the post. In a temporary git worktree it makes branch `blog/<slug>` from `main`, adds the post to the site's
+   `src/data/blogPosts.ts`, adds the llms.txt line, runs `npm ci && npm run build`, commits and pushes the branch.
+   Vercel builds a preview. The first run also patches the blog page for reviewedBy and FAQ JSON-LD.
 3. **Outputs:** `output/<slug>/publish-log.md` (branch name, commit, build result, preview URL).
 4. **Human check:** The owner opens the preview and approves. He merges the branch. `review.md` says `reviewed`.
 
@@ -24,5 +25,5 @@ Last updated: 2026-10-06
 
 ## Never do this
 - Never push to `main` or merge. Only a `blog/<slug>` branch. The owner merges.
-- Never touch uncommitted work already in the site repo. Stop and tell the owner if the tree is dirty.
+- Never touch the owner's checked-out branch or uncommitted work. The script works in a temporary worktree.
 - Never push if the build fails.

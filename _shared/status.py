@@ -16,6 +16,15 @@ def readReviewStatus(runFolder):
     return "pending"
 
 
+def readDisplayStatus(runFolder):
+    """Rooms with no human check (room 05) have checks.txt instead of review.md."""
+    checksFile = runFolder / "checks.txt"
+    if (runFolder / "review.md").exists() or not checksFile.exists():
+        return readReviewStatus(runFolder)
+    hasFailure = any(line.startswith("FAIL") for line in checksFile.read_text(encoding="utf-8").splitlines())
+    return "FAILED" if hasFailure else "auto-pass"
+
+
 def listRuns(room, requestedSlug):
     outputFolder = room / "output"
     if not outputFolder.exists():
@@ -33,7 +42,7 @@ def printRoom(room, requestedSlug):
         return
     for run in runs:
         files = ", ".join(sorted(file.name for file in run.iterdir() if file.is_file())) or "no files"
-        print(f"{room.name:<28} {run.name:<36} {readReviewStatus(run):<9} {files}")
+        print(f"{room.name:<28} {run.name:<36} {readDisplayStatus(run):<9} {files}")
 
 
 def main():
