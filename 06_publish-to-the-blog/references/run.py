@@ -1,5 +1,5 @@
 """Room 06: put the post on a blog/<slug> branch of the site repo so the host builds a preview. Never merges.
-Usage: py 06_publish-to-the-blog/references/run.py <slug> [--site-repo PATH] [--base main]
+Usage: py 06_publish-to-the-blog/references/run.py <slug> [--site-repo PATH] [--base origin/main]
 Works in a temporary git worktree, so the owner's checked-out branch and uncommitted work are never touched.
 Writes output/<slug>/publish-log.md. The owner opens the preview, then merges."""
 import argparse
@@ -180,6 +180,7 @@ def publish(slug, siteRepo, base):
     branch = f"blog/{slug}"
     if runGit(siteRepo, "branch", "--list", branch):
         sys.exit(f"Branch {branch} already exists in the site repo.")
+    runGit(siteRepo, "fetch", "origin")  # branch from the live site, never a stale local copy (23 Nov 2026)
     worktree = Path(tempfile.mkdtemp(prefix="room06-")) / "site"
     runGit(siteRepo, "worktree", "add", "-b", branch, str(worktree), base)
     log = [f"- Branch: `{branch}` (from `{base}`)", f"- Site repo: `{siteRepo}`"]
@@ -211,7 +212,7 @@ def main():
     arguments = argparse.ArgumentParser()
     arguments.add_argument("slug")
     arguments.add_argument("--site-repo", default=None)
-    arguments.add_argument("--base", default="main")
+    arguments.add_argument("--base", default="origin/main")
     options = arguments.parse_args()
     siteRepo = Path(options.site_repo or loadClient()["site_repo"])
     publish(options.slug, siteRepo, options.base)

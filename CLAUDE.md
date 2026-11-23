@@ -30,7 +30,8 @@ warn before destructive or paid actions · tables and lists · say what good loo
 | draft approved | `04_expert-reviews-it/CONTEXT.md` | the expert signs off |
 | expert signed off | `05_add-search-markup/CONTEXT.md` | flows straight on |
 | markup built | `06_publish-to-the-blog/CONTEXT.md` | the owner approves the preview and merges |
-| it is Monday | `07_see-what-worked/CONTEXT.md` | the owner skims the report |
+| it is Sunday (autopilot) | `_shared/autopilot-sunday.md`, replies via `_shared/autopilot-check.md` | Adam's and Apollo's email yes |
+| asked for the weekly report | `07_see-what-worked/CONTEXT.md` | the owner skims the report |
 | asked for status | `py _shared/status.py` | report what it prints |
 
 Run conventions, stable vs. per-run material, and review status: `CONTEXT.md`.
@@ -42,8 +43,10 @@ Run conventions, stable vs. per-run material, and review status: `CONTEXT.md`.
 4. **60-30-10:** a room tagged 60% or 30% runs a script, never the model.
 5. **Nothing moves on until that room's `review.md` says `reviewed`.**
 6. **Never call a paid API without asking, every time** (open-seo, DataForSEO).
-7. **Nothing publishes itself.** Room 06 only ever pushes a branch. The owner merges, or says
-   "publish" for that slug and Claude merges via the `publish-approved-article` skill.
+7. **Nothing publishes without two yeses.** Room 06 only ever pushes a branch. The owner merges, or says
+   "publish" for that slug and Claude merges via the `publish-approved-article` skill. Standing yes (Adam, 22 Nov 2026):
+   the Sunday autopilot (`_shared/autopilot.ps1`) may merge once Adam replied YES to the draft AND Apollo signed off,
+   both by email from their own addresses in `_shared/autopilot.json`.
 8. Truth rules in `_shared/truth-rules.md` outrank everything, including SEO.
 9. When a run goes wrong, fix the reference file that allowed it, not the artifact.
 

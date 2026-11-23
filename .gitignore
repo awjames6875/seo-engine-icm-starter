@@ -8,3 +8,6 @@ CLAUDE.local.md
 tasks/
 */CLAUDE.md
 */*/CLAUDE.md
+_shared/autopilot.json
+_shared/autopilot-logs/
+_shared/story-bank.md

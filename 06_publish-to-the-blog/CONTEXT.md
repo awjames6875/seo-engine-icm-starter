@@ -24,6 +24,6 @@ Last updated: 2026-11-12
 - AI: nothing. This room is deterministic.
 
 ## Never do this
-- Never push to `main` or merge. Only a `blog/<slug>` branch. The owner merges.
+- `run.py` never pushes to `main` or merges: it pushes only a `blog/<slug>` branch, made from a fresh `origin/main` (it fetches first). Merging is done only by `.claude/skills/publish-approved-article/SKILL.md`, after Adam AND Apollo said yes (Adam's standing yes, CLAUDE.md rule 7, 22 Nov 2026).
 - Never touch the owner's checked-out branch or uncommitted work. The script works in a temporary worktree.
 - Never push if the build fails.

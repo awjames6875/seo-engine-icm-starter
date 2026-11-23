@@ -26,6 +26,10 @@ Last updated: 2026-10-07
 - Script: match patterns, write the sheet, copy the draft to `approved.md` with the fixes.
 - AI: nothing. This room is deterministic.
 
+## Autopilot (added 2026-11-22)
+Apollo may sign off by email. The autopilot copies HIS reply into the sheet word for word ("ALL OK" = every flag OK)
+and asks again if any flag is unclear. It never decides a flag itself. See `_shared/autopilot-check.md`.
+
 ## Never do this
 - Never mark a flag OK on the expert reviewer's behalf.
 - Never let the owner's approval stand in for the expert reviewer's. Both are needed.

@@ -18,5 +18,15 @@ How the owner sounds in every article. Room 03 reads this. Truth rules outrank i
   "it's important to note", "we understand that". No exclamation marks.
 - Business name exactly as `client.json` → `business_name`.
 
+## Titles and hooks (Adam, 23 Nov 2026: "Myron Golden hooks: how not to, 5 ways to, what to do when...")
+A title is a curiosity hook: a how, a why or a count that makes the reader want the answer. It also carries the words people really Google, so it can rank.
+- **Shapes that work:** "How NOT to ...", "5 Ways to ...", "What to Do When ...", "Why ... (and What to Do Instead)", "The Mistake Most Families Make When ...", "What Nobody Tells You About ...".
+- **Real search words first.** Put the phrase people type (for example "addiction treatment insurance Tulsa") in the title, then the hook around it.
+- **A count is a promise.** "5 ways" has exactly 5 headings in the post, each one true and useful.
+- **Curiosity, never fear or pressure.** No "before it's too late", no shock claims, no exclamation marks.
+- **Never promise a result.** Not "How to get your husband sober", but "What to do when your husband won't get help". Say what the reader can do, not what will happen.
+- **The post must really answer the hook.** The first two sentences give the plain answer; the rest earns the click. Never a hook the post does not deliver.
+- **General health facts inside a hook post go to Apollo to verify** (`questions-for-owner.md`).
+
 ## Calls to action
 - One at the end: call `nap.phone`. No pressure ("Call today before it's too late").

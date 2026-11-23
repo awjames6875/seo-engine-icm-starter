@@ -28,6 +28,17 @@ Google autocomplete and DataForSEO do the work. The script only fetches, scores 
 - Script: fetch keywords and questions, score, sort, write `topics-*.csv` and `brief.md`.
 - AI: nothing. The owner picks the topic, not the model.
 
+## Autopilot (added 2026-11-22)
+On Sundays the autopilot proposes the topic and fills `owner-facts.md` only with lines copied from `_shared/story-bank.md`.
+Adam's email YES on the draft is the pick. See `_shared/autopilot-sunday.md`.
+
+## Research order (Adam, 23 Nov 2026: "beat everyone", answer what the public asks)
+1. **Questions people ask (free):** `run.py` free mode (Google autocomplete). Optional: a list of questions from "Answer the Public", saved as `output/questions-<YYYY-MM-DD>.md`. People Also Ask needs `--paid`: ask first.
+2. **Competitor check (free):** `references/competitors.md` says how. Output: `output/competitors-<YYYY-MM-DD>.md`. Topics in its gaps list rank higher.
+3. **vidIQ (ask first, about 5 credits a keyword):** adds the `youtube_volume` column for the video that goes with each post. It tells us YouTube demand only, never Google web ranking.
+4. **Answer mode:** with no owner story, the article answers the public's question from `_shared/client.json` facts (see `03_write-the-article/CONTEXT.md`).
+Mental health is a high-trust topic: every post names the reviewing therapist (room 04). Nothing here promises a ranking.
+
 ## Never do this
 - Never use a city name as a head keyword unless the data shows real volume. Local match comes from the Business Profile and NAP.
 - Never write `owner-facts.md` for the owner. It is their words or it is empty.
